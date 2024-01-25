@@ -6,7 +6,7 @@ import process from "process";
 
 export default class CliHelper {
 
-    public async getArgv() : Promise<any> {
+    public async getArgv(): Promise<any> {
         return yargs
             .option('c', {
                 type: 'string',
@@ -20,10 +20,10 @@ export default class CliHelper {
                 alias: 'include'
             }).option('g', {
                 type: 'string',
-                description: `GPT model. Default is gpt-4, if you do not have access, next best is gpt-3.5-turbo, but it isn't not so good`,
+                description: `GPT model. Default is gpt-4-1106-preview, if you do not have access, next best is gpt-3.5-turbo, but it isn't not so good`,
                 alias: 'gpt'
             }).option('u', {
-                type:'string',
+                type: 'string',
                 description: 'Runs only update on userDefined builder from config matching template name',
                 alias: 'userDefined'
             })
@@ -31,7 +31,7 @@ export default class CliHelper {
             .alias('help', 'h').argv;
     }
 
-    public async getConfig(argv : any) : Promise<Partial<ICodeNarratorConfig>> {
+    public async getConfig(argv: any): Promise<Partial<ICodeNarratorConfig>> {
         let configPath = argv.config as string;
         let userConfig: Partial<ICodeNarratorConfig> = {};
         if (fs.existsSync(path.join(process.cwd(), 'code-narrator.config.ts'))) {

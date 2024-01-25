@@ -8,7 +8,7 @@ import path from "path";
 import OpenAIService from "../services/OpenAIService";
 
 export default class DefaultSettings {
-    static gptModel = 'gpt-4';
+    static gptModel = 'gpt-4-1106-preview';
     public static get() {
 
         return {
@@ -22,7 +22,7 @@ export default class DefaultSettings {
             test_path: "./test",
             exclude: this.getFilesToExclude(),
             readmeRoot: true,
-            repository_url : "https://github.com/ingig/code-narrator",
+            repository_url: "https://github.com/ingig/code-narrator",
 
             //Order of plugins matter, ConfigurationGenerator runs first to get overview of the project.
             builderPlugins: [
@@ -36,10 +36,10 @@ export default class DefaultSettings {
             ],
             documentation_type: 'md', //What format should be generated, e.g. md, sphinx
             document_file_extension: ".md",
-            folderRootFileName : 'README',
+            folderRootFileName: 'README',
             cache_file: '.code-narrator/cache.json', //location of the cache file. :::warning '.code-narrator/cache.json' should be committed into git.
-            gptModel : this.gptModel,
-            aiService : new OpenAIService()
+            gptModel: this.gptModel,
+            aiService: new OpenAIService()
         } as ICodeNarratorConfig
     }
 
