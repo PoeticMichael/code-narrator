@@ -52,7 +52,7 @@
     "mime-types": "^2.1.35",
     "multimatch": "^6.0.0",
     "openai": "^3.1.0",
-    "yargs": "^17.7.1"
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.21.0",
